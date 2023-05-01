@@ -223,21 +223,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
-
-
 
 
 
@@ -1298,27 +1283,109 @@ Proses pengubahan kata gaul menjadi kata yang baku sesuai standar KBBI. Dalam so
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>................ Proses Stemming ................ 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    [maaf, gabung, bareng, indosat, ribu, gigabyte...
-1    [jaringan, minggu, cepat, pakai, banget, oi, g...
-2           [jam, layan, internet, televisi, jaringan]
-Name: Stemmed, dtype: object
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~\AppData\Local\Temp\ipykernel_19232\1057235618.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#==== Stemming : mengurangi dimensi fitur kata/term</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">................ Proses Stemming ................ &#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">stemming</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">listokalimat</span><span class="p">)</span>
 
-==========
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     maaf gabung bareng indosat ribu gigabyte jarin...
-1     jaringan minggu cepat pakai banget oi gilir ku...
-2                  jam layan internet televisi jaringan
-3     lapor daerah sukatani tapos depok indihome min...
-4            indosat ngentot sih jaringan browser jalan
-5                    malas tidur jaringan ngajak kelahi
-6     hawa dingin habis hujan tambah jaringan lambat...
-7                           jaringan lambat banget pagi
-8            jaringan web sih ngeselin banget coba coba
-9     halo telkomsel minggu sinyal jaringan internet...
-10         haha kirim tweet malam emang anjing jaringan
-11              gilir uji laptop jaringan lambat anjing
-Name: newTweet, dtype: object
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4769</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4770</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4771</span><span class="sd">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4772</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4773</span><span class="sd">     def _reduce(</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1121</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="sd">         # self.f is Callable</span>
+<span class="ne">-&gt; </span><span class="mi">1123</span><span class="sd">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1124</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="sd">     def agg(self):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span><span class="sd">                 values = obj.astype(object)._values</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span><span class="sd">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span><span class="sd">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span><span class="sd">                     f,</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\_libs\lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">~\AppData\Local\Temp\ipykernel_19232\631247419.py</span> in <span class="ni">stemming</span><span class="nt">(kalimat)</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span><span class="sd">             term_dict[temp[x]] = temp[x]</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span><span class="sd">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">212</span><span class="sd">             term_dict[temp[x]] = stemmer.stem(temp[x])</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span><span class="sd">     kalimat = [term_dict[term] for term in kalimat]</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span><span class="sd">     #listToStr = &#39; &#39;.join([str(i) for i in kalimat])</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\CachedStemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">                 stems.append(self.cache.get(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="sd">             else:</span>
+<span class="ne">---&gt; </span><span class="mi">20</span><span class="sd">                 stem = self.delegatedStemmer.stem(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="sd">                 self.cache.set(word, stem)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="sd">                 stems.append(stem)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="sd">         for word in words:</span>
+<span class="ne">---&gt; </span><span class="mi">27</span><span class="sd">             stems.append(self.stem_word(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span><span class="sd">         return &#39; &#39;.join(stems)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             return self.stem_plural_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd">         else:</span>
+<span class="ne">---&gt; </span><span class="mi">36</span><span class="sd">             return self.stem_singular_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="sd">     def is_plural(self, word):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem_singular_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Stem</span> <span class="n">a</span> <span class="n">singular</span> <span class="n">word</span> <span class="n">to</span> <span class="n">its</span> <span class="n">common</span> <span class="n">stem</span> <span class="n">form</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2">         context = Context(word, self.dictionary, self.visitor_provider)</span>
+<span class="ne">---&gt; </span><span class="mi">84</span><span class="s2">         context.execute()</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2">         return context.result</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">execute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         #step 1 - 5</span>
+<span class="ne">---&gt; </span><span class="mi">37</span><span class="s2">         self.start_stemming_process()</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         #step 4, 5</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">         self.remove_prefixes()</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">             if self.process_is_stopped:</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Dictionary\ArrayDictionary.py</span> in <span class="ni">contains</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2">             self.add_words(words)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> </span>
+<span class="ne">----&gt; </span><span class="mi">9</span><span class="s2">     def contains(self, word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">         return word in self.words</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> </span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1736,16 +1803,14 @@ akurasi klasifikasi secara keseluruhan. Data dikatakan seimbang apabila perbandi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fold-berjumlah: 10
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Data latih sebelum SMOTE = 540
+Jumlah Data latih sebelum SMOTE = 540
 Sarkasme = 93 BukanSarkas = 447
 Jumlah Data latih setelah SMOTE = 894
 Sarkasme = 447 BukanSarkas = 447
 Jumlah Data Uji = 60
 </pre></div>
 </div>
-<img alt="../../_images/16019a69276c81e2712582567c66636d0facfe29c2451daa21da366f77ceb54a.png" src="../../_images/16019a69276c81e2712582567c66636d0facfe29c2451daa21da366f77ceb54a.png" />
+<img alt="../../_images/9329761845aeb7afe9b8e6a8de5a7c3a42e2c9bb536c9a78487b4941c070d7b5.png" src="../../_images/9329761845aeb7afe9b8e6a8de5a7c3a42e2c9bb536c9a78487b4941c070d7b5.png" />
 </div>
 </div>
 <p><em><strong>Sebelum dilakukan SMOTE</strong></em></p>
@@ -1775,7 +1840,7 @@ Jumlah Data Uji = 60
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cd2549b1609b4a40e24c2af1e1a1e97447134db0172e735824e7506d544fd9ba.png" src="../../_images/cd2549b1609b4a40e24c2af1e1a1e97447134db0172e735824e7506d544fd9ba.png" />
+<img alt="../../_images/d24fd2e66524d2cad0699fab0e9e4639a6d514b173007a58c21af7700af772fe.png" src="../../_images/d24fd2e66524d2cad0699fab0e9e4639a6d514b173007a58c21af7700af772fe.png" />
 </div>
 </div>
 </section>
@@ -1941,7 +2006,7 @@ fold-berjumlah: 5
 867
 
 ================ Fold ke - 1
-Waktu Eksekusi SMOTE=  0.10637397388927639 detik atau 0.0017728995648212732 menit
+Waktu Eksekusi SMOTE=  0.5160977069990622 detik atau 0.008601628449984371 menit
 Jumlah Data latih sebelum SMOTE = 480
 Sarkasme = 73 BukanSarkas = 407
 Jumlah Data latih setelah SMOTE = 814
@@ -1949,57 +2014,97 @@ Sarkasme = 407 BukanSarkas = 407
 Jumlah Data Uji = 120
 
 Metode Adaboost SVM
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\AhmadYazidMunif\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_base.py:166: FutureWarning: `base_estimator` was renamed to `estimator` in version 1.2 and will be removed in 1.4.
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">~\AppData\Local\Temp\ipykernel_17144\395820476.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Metode Adaboost SVM&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="n">model_adaboost</span> <span class="o">=</span><span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">base_estimator</span><span class="o">=</span><span class="n">baseLearn_svm</span><span class="p">,</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">57</span>     <span class="n">model_adaboost</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_oversample</span><span class="p">,</span><span class="n">y_oversample</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="n">Prediksi</span> <span class="o">=</span> <span class="n">model_adaboost</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="c1">#add to list model</span>
+Waktu Eksekusi Training Test=  69.11410175999845 detik atau 1.1519016959999742 menit
+(TP) TruePositif : 5 
+(FP) FalsePositif : 8 
+(TN) TrueNegatif : 78 
+(FN) FalseNegatif : 29
+Akurasi Fold ke - 1 = 69.167
+Presisi Fold ke - 1 = 38.462
+Recall Fold ke - 1 = 14.706
+F1-Measure Fold ke - 1 = 21.277
+867
 
-<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_weight_boosting.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> 
-<span class="g g-Whitespace">    </span><span class="mi">161</span>             <span class="c1"># Boosting step</span>
-<span class="ne">--&gt; </span><span class="mi">162</span>             <span class="n">sample_weight</span><span class="p">,</span> <span class="n">estimator_weight</span><span class="p">,</span> <span class="n">estimator_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_boost</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>                 <span class="n">iboost</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">,</span> <span class="n">random_state</span>
-<span class="g g-Whitespace">    </span><span class="mi">164</span>             <span class="p">)</span>
+================ Fold ke - 2
+Waktu Eksekusi SMOTE=  0.15926613400006318 detik atau 0.0026544355666677194 menit
+Jumlah Data latih sebelum SMOTE = 480
+Sarkasme = 83 BukanSarkas = 397
+Jumlah Data latih setelah SMOTE = 794
+Sarkasme = 397 BukanSarkas = 397
+Jumlah Data Uji = 120
 
-<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_weight_boosting.py</span> in <span class="ni">_boost</span><span class="nt">(self, iboost, X, y, sample_weight, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span><span class="s2">         if self.algorithm == &quot;SAMME.R&quot;:</span>
-<span class="ne">--&gt; </span><span class="mi">569</span><span class="s2">             return self._boost_real(iboost, X, y, sample_weight, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span><span class="s2">         else:  # elif self.algorithm == &quot;SAMME&quot;:</span>
+Metode Adaboost SVM
+Waktu Eksekusi Training Test=  77.2981243739996 detik atau 1.2883020728999932 menit
+(TP) TruePositif : 5 
+(FP) FalsePositif : 9 
+(TN) TrueNegatif : 87 
+(FN) FalseNegatif : 19
+Akurasi Fold ke - 2 = 76.667
+Presisi Fold ke - 2 = 35.714
+Recall Fold ke - 2 = 20.833
+F1-Measure Fold ke - 2 = 26.316
+867
 
-<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\ensemble\_weight_boosting.py</span> in <span class="ni">_boost_real</span><span class="nt">(self, iboost, X, y, sample_weight, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span><span class="s2">         estimator = self._make_estimator(random_state=random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">578</span><span class="s2">         estimator.fit(X, y, sample_weight=sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span><span class="s2">         y_predict_proba = estimator.predict_proba(X)</span>
+================ Fold ke - 3
+Waktu Eksekusi SMOTE=  1.0123771729995497 detik atau 0.01687295288332583 menit
+Jumlah Data latih sebelum SMOTE = 480
+Sarkasme = 97 BukanSarkas = 383
+Jumlah Data latih setelah SMOTE = 766
+Sarkasme = 383 BukanSarkas = 383
+Jumlah Data Uji = 120
 
-<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\svm\_base.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="s2">         seed = rnd.randint(np.iinfo(&quot;i&quot;).max)</span>
-<span class="ne">--&gt; </span><span class="mi">252</span><span class="s2">         fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span><span class="s2">         # see comment on the other call to np.iinfo in this file</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span><span class="s2"> </span>
+Metode Adaboost SVM
+Waktu Eksekusi Training Test=  59.621921706999274 detik atau 0.9936986951166545 menit
+(TP) TruePositif : 2 
+(FP) FalsePositif : 4 
+(TN) TrueNegatif : 106 
+(FN) FalseNegatif : 8
+Akurasi Fold ke - 3 = 90.0
+Presisi Fold ke - 3 = 33.333
+Recall Fold ke - 3 = 20.0
+F1-Measure Fold ke - 3 = 25.0
+867
 
-<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\svm\_base.py</span> in <span class="ni">_dense_fit</span><span class="nt">(self, X, y, sample_weight, solver_type, kernel, random_seed)</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span><span class="s2">             self.fit_status_,</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span><span class="s2">             self._num_iter,</span>
-<span class="ne">--&gt; </span><span class="mi">331</span><span class="s2">         ) = libsvm.fit(</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span><span class="s2">             X,</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span><span class="s2">             y,</span>
+================ Fold ke - 4
+Waktu Eksekusi SMOTE=  0.13833599999998114 detik atau 0.0023055999999996857 menit
+Jumlah Data latih sebelum SMOTE = 480
+Sarkasme = 88 BukanSarkas = 392
+Jumlah Data latih setelah SMOTE = 784
+Sarkasme = 392 BukanSarkas = 392
+Jumlah Data Uji = 120
 
-<span class="ne">KeyboardInterrupt</span>: 
+Metode Adaboost SVM
+Waktu Eksekusi Training Test=  57.88678527999946 detik atau 0.9647797546666577 menit
+(TP) TruePositif : 0 
+(FP) FalsePositif : 7 
+(TN) TrueNegatif : 94 
+(FN) FalseNegatif : 19
+Akurasi Fold ke - 4 = 78.333
+Presisi Fold ke - 4 = 0.0
+Recall Fold ke - 4 = 0.0
+F1-Measure Fold ke - 4 = 0
+867
+
+================ Fold ke - 5
+Waktu Eksekusi SMOTE=  0.142426025999157 detik atau 0.00237376709998595 menit
+Jumlah Data latih sebelum SMOTE = 480
+Sarkasme = 87 BukanSarkas = 393
+Jumlah Data latih setelah SMOTE = 786
+Sarkasme = 393 BukanSarkas = 393
+Jumlah Data Uji = 120
+
+Metode Adaboost SVM
+Waktu Eksekusi Training Test=  58.44826538600137 detik atau 0.9741377564333561 menit
+(TP) TruePositif : 8 
+(FP) FalsePositif : 5 
+(TN) TrueNegatif : 95 
+(FN) FalseNegatif : 12
+Akurasi Fold ke - 5 = 85.833
+Presisi Fold ke - 5 = 61.538
+Recall Fold ke - 5 = 40.0
+F1-Measure Fold ke - 5 = 48.485
+rata-rata akurasi= 80.0
+Waktu Eksekusi Training Test=  322.50406527999985 detik atau 5.375067754666664 menit
 </pre></div>
 </div>
 </div>

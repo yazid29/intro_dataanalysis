@@ -43,8 +43,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['x = newData.iloc[:]', 'y= DataTweet["Label"]', '', "print('\\n================ Model ================ ')", "print('\\n================ Pembagian data Training dan Testing ================ ')"]
-...
-['print("rata-rata akurasi=",round(rata2/k,3))', '', 'end = timer()', 'waktue = end - start', 'print("Waktu Eksekusi Training Test= ",waktue,"detik atau",waktue/60,"menit")']
+#==== Stemming : mengurangi dimensi fitur kata/term
+print('\n................ Proses Stemming ................ ')
+DataTweet['Stemmed'] = DataTweet['Stopword'].apply(stemming)
+print(DataTweet['Stemmed'].head(3))
+DataTweet['newTweet'] = DataTweet['Stemmed'].apply(listokalimat)
+print('\n==========')
+DataTweet['newTweet'].head(12)
 -------------------
 
