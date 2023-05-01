@@ -1,5 +1,5 @@
 # intro_dataanalysis
-Introduction a Data Analysis with Python
+Introduction to Data Analysis with Python
 
 **Ahmad Yazid Munif // Powered by Jupyter Book**
 
