@@ -1,0 +1,1093 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Deteksi Sarkasme &#8212; AYM | Data Analysis with Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Deteksi_Sarkasme/_deteksiSarkasme';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Install Python" href="../BasicPython/0_basicpython.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/python-logo2.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/python-logo2.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Learn Data Analysis
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Understanding</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../BasicPython/0_basicpython.html">Python Basic</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Deteksi Sarkasme</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Deteksi_Sarkasme/_deteksiSarkasme.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Deteksi Sarkasme</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="deteksi-sarkasme">
+<h1>Deteksi Sarkasme<a class="headerlink" href="#deteksi-sarkasme" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span><span class="o">,</span><span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">model_selection</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">angkadua</span><span class="p">(</span><span class="n">teksAwal2</span><span class="p">):</span>
+    <span class="n">final2</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">huruf2</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">teksAwal2</span><span class="p">)):</span>
+        <span class="n">cek2</span><span class="o">=</span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">teksAwal2</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cek2</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">!=</span><span class="n">huruf2</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;2&quot;</span><span class="p">:</span>
+                        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">final2</span><span class="p">))</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+                            <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+                            <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                            <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                        <span class="k">elif</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">):</span>
+                            <span class="n">jo</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cek2</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+                            <span class="k">if</span><span class="p">(</span><span class="n">jo</span><span class="o">==</span><span class="s2">&quot;se&quot;</span> <span class="ow">or</span> <span class="n">jo</span><span class="o">==</span><span class="s2">&quot;di&quot;</span><span class="p">):</span>
+                                <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+                                <span class="n">final2</span><span class="o">=</span><span class="n">final2</span><span class="o">+</span><span class="n">cek2</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="n">x</span><span class="p">]</span>
+                                <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+                                <span class="n">final2</span><span class="o">=</span><span class="n">final2</span><span class="o">+</span><span class="n">cek2</span><span class="p">[:</span><span class="n">x</span><span class="p">]</span>
+                                <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+                            <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+                        <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+                    <span class="n">huruf2</span><span class="o">=</span><span class="n">cek2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="n">final2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">final2</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hasil</span>
+
+<span class="k">def</span> <span class="nf">hapus_hurufganda</span><span class="p">(</span><span class="n">teksAwal</span><span class="p">):</span>
+    <span class="n">jml</span><span class="o">=</span><span class="mi">0</span>
+    
+    <span class="n">final</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">huruf</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">teksAwal</span><span class="p">)):</span>
+        <span class="n">cek</span><span class="o">=</span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">teksAwal</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cek</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">huruf</span><span class="o">=</span><span class="n">cek</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">jml</span><span class="o">=</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">cek</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">!=</span><span class="n">huruf</span><span class="p">:</span>
+                    <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+                    <span class="n">huruf</span><span class="o">=</span><span class="n">cek</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                    <span class="n">jml</span><span class="o">=</span><span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">jml</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">:</span>                    
+                        <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cek</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+                        <span class="n">huruf</span><span class="o">=</span><span class="n">cek</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+                        <span class="n">jml</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">final</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hasil</span>
+
+<span class="k">def</span> <span class="nf">hapus_simbolAngka</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">del_angkadua</span><span class="o">=</span><span class="n">angkadua</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">del_hrfganda</span><span class="o">=</span><span class="n">hapus_hurufganda</span><span class="p">(</span><span class="n">del_angkadua</span><span class="p">)</span>
+    
+    <span class="c1">#hasil=[]</span>
+    <span class="n">token</span><span class="o">=</span><span class="n">del_hrfganda</span>
+    <span class="n">lte</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;2g&quot;</span><span class="p">,</span><span class="s2">&quot;3g&quot;</span><span class="p">,</span><span class="s2">&quot;4g&quot;</span><span class="p">,</span><span class="s2">&quot;5g&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">)):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lte</span><span class="p">):</span>
+            <span class="n">token</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">token</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                
+    <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">token</span><span class="p">)):</span>
+        <span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">]</span><span class="o">=</span><span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">]</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+        <span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\W&#39;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">])</span>
+        <span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">token</span><span class="p">[</span><span class="n">ele</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">token</span>
+
+<span class="k">def</span> <span class="nf">hapus_emoticon</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">emoji_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>  <span class="c1"># emoticons</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>  <span class="c1"># symbols &amp; pictographs</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>  <span class="c1"># transport &amp; map symbols</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;</span>  <span class="c1"># flags (iOS)</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U00002500</span><span class="s2">-</span><span class="se">\U00002BEF</span><span class="s2">&quot;</span>  <span class="c1"># chinese char</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U00002702</span><span class="s2">-</span><span class="se">\U000027B0</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U00002702</span><span class="s2">-</span><span class="se">\U000027B0</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U000024C2</span><span class="s2">-</span><span class="se">\U0001F251</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001f926</span><span class="s2">-</span><span class="se">\U0001f937</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U00010000</span><span class="s2">-</span><span class="se">\U0010ffff</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u2640</span><span class="s2">-</span><span class="se">\u2642</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u2600</span><span class="s2">-</span><span class="se">\u2B55</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u200d</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u23cf</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u23e9</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u231a</span><span class="s2">&quot;</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\ufe0f</span><span class="s2">&quot;</span>  <span class="c1"># dingbats</span>
+                               <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\u3030</span><span class="s2">&quot;</span>
+                               <span class="s2">&quot;]+&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+    <span class="c1">#hapus emoji</span>
+    <span class="n">CleanEmoji</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">emoji_pattern</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">CleanEmoji</span>
+
+
+
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">listokalimat</span><span class="p">(</span><span class="n">kalimat</span><span class="p">):</span>
+    <span class="n">listToStr</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">listToStr</span>
+
+
+<span class="k">def</span> <span class="nf">delstopwordID</span><span class="p">(</span><span class="n">teks</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">kata</span> <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">teks</span> <span class="k">if</span> <span class="n">kata</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_stopwords</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">daftarStopword</span><span class="p">():</span>
+    <span class="n">list_stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
+    <span class="c1">##baca tambahan </span>
+    <span class="n">my_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">AhmadYazidMunif</span><span class="se">\\</span><span class="s2">JupiterNotebook</span><span class="se">\\</span><span class="s2">StopWordList.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">tambahan</span> <span class="o">=</span> <span class="n">my_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">daftar</span> <span class="o">=</span> <span class="n">tambahan</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1">####</span>
+    <span class="n">list_stopwords</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">daftar</span><span class="p">)</span>
+    <span class="n">list_stopwords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_stopwords</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">list_stopwords</span>
+
+<span class="k">def</span> <span class="nf">normal_term</span><span class="p">():</span>
+    <span class="n">normalisasi_word</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">AhmadYazidMunif</span><span class="se">\\</span><span class="s1">JupiterNotebook</span><span class="se">\\</span><span class="s1">_normalisasiFix.xlsx&#39;</span><span class="p">)</span>
+    <span class="n">normalisasi_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">normalisasi_word</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">normalisasi_dict</span><span class="p">:</span>
+            <span class="n">normalisasi_dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">normalisasi_dict</span>
+
+<span class="k">def</span> <span class="nf">normalisasi</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="n">kalimat</span><span class="o">=</span><span class="n">document</span>
+    <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">kalimat</span><span class="p">[</span><span class="n">term</span><span class="p">]</span> <span class="ow">in</span> <span class="n">normalisasi_dict</span><span class="p">:</span>
+            <span class="n">kalimat</span><span class="p">[</span><span class="n">term</span><span class="p">]</span><span class="o">=</span><span class="n">normalisasi_dict</span><span class="p">[</span><span class="n">kalimat</span><span class="p">[</span><span class="n">term</span><span class="p">]]</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hasil</span>
+
+<span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">kalimat</span><span class="p">):</span>
+    <span class="n">term_dict</span><span class="o">=</span><span class="p">{}</span>
+    <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">kalimat</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">kalimat</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">term</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">term_dict</span><span class="p">:</span>
+                <span class="n">term_dict</span><span class="p">[</span><span class="n">term</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot; &quot;</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">term_dict</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;jaringan&quot;</span><span class="p">:</span>
+            <span class="n">term_dict</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;teh&quot;</span> <span class="ow">and</span> <span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;anget&quot;</span><span class="p">:</span>
+            <span class="n">term_dict</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">term_dict</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+    <span class="n">kalimat</span><span class="o">=</span><span class="p">[</span><span class="n">term_dict</span><span class="p">[</span><span class="n">term</span><span class="p">]</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">kalimat</span><span class="p">]</span>
+    <span class="c1">#listToStr = &#39; &#39;.join([str(i) for i in kalimat])</span>
+    <span class="k">return</span> <span class="n">kalimat</span>
+
+
+<span class="n">list_stopwords</span> <span class="o">=</span> <span class="n">daftarStopword</span><span class="p">()</span>
+<span class="n">term_dict</span><span class="o">=</span><span class="p">{}</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+<span class="n">normalisasi_dict</span> <span class="o">=</span> <span class="n">normal_term</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namaFile</span><span class="o">=</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">AhmadYazidMunif</span><span class="se">\\</span><span class="s1">JupiterNotebook</span><span class="se">\\</span><span class="s1">#tweet_label.csv&#39;</span>
+<span class="n">DataTweet</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">namaFile</span><span class="p">)</span>
+<span class="n">jumlahData</span><span class="o">=</span><span class="n">DataTweet</span><span class="p">[</span><span class="s2">&quot;Tweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Jumlah Data</span>
+<span class="n">jmlSarkas</span><span class="o">=</span><span class="n">DataTweet</span><span class="p">[</span><span class="n">DataTweet</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="s2">&quot;Sarkasme&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">jmlNonSarkas</span><span class="o">=</span><span class="n">DataTweet</span><span class="p">[</span><span class="n">DataTweet</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="s2">&quot;BukanSarkas&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Jumlah&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">jumlahData</span><span class="p">],</span> <span class="s1">&#39;Sarkasme&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">jmlSarkas</span><span class="p">],</span><span class="s1">&#39;BukanSarkas&#39;</span><span class="p">:[</span><span class="n">jmlNonSarkas</span><span class="p">]}</span>
+<span class="n">cekJumlah</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sarkasme&#39;</span><span class="p">,</span><span class="s1">&#39;BukanSarkas&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Jumlah Data ...... &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total:&quot;</span><span class="p">,</span><span class="n">jumlahData</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cekJumlah</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">cekJumlah</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...... Jumlah Data ...... 
+Total: 1374
+   Sarkasme  BukanSarkas
+0       178         1196
+</pre></div>
+</div>
+<img alt="../_images/adea440b521b576eb42b2fd0cff93210530346e515b820310465cccbec918b0f.png" src="../_images/adea440b521b576eb42b2fd0cff93210530346e515b820310465cccbec918b0f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lowRemoveURL</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="c1">#lowercase</span>
+    <span class="n">lower</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="c1">#hapus hastag/mention</span>
+    <span class="n">HastagRT</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;#(\w+)|@(\w+)|(\brt\b)&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">lower</span><span class="p">)</span>
+    <span class="c1">#hapus URL</span>
+    <span class="n">pola_url</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span>
+    <span class="n">CleanURL</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pola_url</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">HastagRT</span><span class="p">)</span>
+    <span class="c1">#hapus emoticon</span>
+    <span class="n">hps_emoji</span><span class="o">=</span><span class="n">hapus_emoticon</span><span class="p">(</span><span class="n">CleanURL</span><span class="p">)</span>
+    <span class="c1">#hapus multiWhitespace++, ex: ahh   haa</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">hps_emoji</span><span class="p">)</span>
+    <span class="c1">#hasil akhir casefolding</span>
+    <span class="n">hasil</span><span class="o">=</span><span class="n">text</span>
+    <span class="k">return</span> <span class="n">hasil</span>
+
+<span class="c1">#============== Start Processing Text</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">##-------- Mulai Proses Preprocessing --------##</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Proses Casefolding lowercase, hapus URL...... &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;casefolding1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">lowRemoveURL</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>##-------- Mulai Proses Preprocessing --------##
+
+
+...... Proses Casefolding lowercase, hapus URL...... 
+                                                  Tweet        Label  \
+0     @mopuci @collegemenfess Mjb, indogsat 100k 50g...     Sarkasme   
+1     ini jaringan pas wiken knp kenceng pakee bgttt...     Sarkasme   
+2     @MNCPlayID sudah lebih dari 16 jam layanan int...  BukanSarkas   
+3     ⁦@IndiHome⁩ lapor di daerah sukatani tapos dep...  BukanSarkas   
+4     indosat ngntd kmpa si, ada jaringan tpi browse...     Sarkasme   
+...                                                 ...          ...   
+1369  @FirstMediaCares Mohon di percepat yah ka\r\nD...  BukanSarkas   
+1370  @IndiHomeCare Kalo pasang kembali justru penga...  BukanSarkas   
+1371  @IndiHomeCare internet mati min, jaringan terp...  BukanSarkas   
+1372  @BiznetHome min kenapa jaringan tiba2 di matik...  BukanSarkas   
+1373  @FirstMediaCares Tidak ada jaringan min dari j...  BukanSarkas   
+
+                                           casefolding1  
+0      mjb, indogsat 100k 50gb. jaringan lebih ok ju...  
+1     ini jaringan pas wiken knp kenceng pakee bgttt...  
+2      sudah lebih dari 16 jam layanan internet dan ...  
+3     ⁦ ⁩ lapor di daerah sukatani tapos depok serin...  
+4     indosat ngntd kmpa si, ada jaringan tpi browse...  
+...                                                 ...  
+1369   mohon di percepat yah ka dikarenakan sangat b...  
+1370   kalo pasang kembali justru pengaruh ke jaring...  
+1371               internet mati min, jaringan terputus  
+1372   min kenapa jaringan tiba2 di matikan? daerah ...  
+1373         tidak ada jaringan min dari jam 12 offline  
+
+[1374 rows x 3 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#==== Tokenisasi : memisahkan kata dalam kalimat</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Tokenisasi ...... &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Tokenisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;casefolding1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[[</span><span class="s1">&#39;Tokenisasi&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...... Tokenisasi ...... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                          Tokenisasi
+0  [mjb, ,, indogsat, 100k, 50gb, ., jaringan, le...
+1  [ini, jaringan, pas, wiken, knp, kenceng, pake...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Proses Casefolding2 hapus angka dan simbol...... &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;casefolding2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Tokenisasi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">hapus_simbolAngka</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[[</span><span class="s1">&#39;casefolding2&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...... Proses Casefolding2 hapus angka dan simbol...... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        casefolding2
+0  [mjb, , indogsat, k, gb, , jaringan, lebih, ok...
+1  [ini, jaringan, pas, wiken, knp, kenceng, pake...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#============== Normalisasi: kata gaul, singkatan jadi kata baku</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Proses Normalisasi ...... &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Normalisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;casefolding2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">normalisasi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[[</span><span class="s1">&#39;Normalisasi&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...... Proses Normalisasi ...... 
+                                         Normalisasi
+0  [maaf, gabung, bareng, indosat, k, gigabyte, j...
+1  [ini, jaringan, waktu, minggu, kenapa, cepat, ...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#==== Stopword Removal : hapus kata yang tidak terlalu penting</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">...... Proses Stopword Removal ...... &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stopword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Normalisasi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">delstopwordID</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[[</span><span class="s1">&#39;Stopword&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...... Proses Stopword Removal ...... 
+                                            Stopword
+0  [maaf, gabung, bareng, indosat, k, gigabyte, j...
+1  [jaringan, minggu, cepat, pakai, banget, oi, g...
+2   [jam, layanan, internet, televisi, jaringan, cc]
+3  [lapor, daerah, sukatani, tapos, depok, indiho...
+4  [indosat, ngentot, sih, jaringan, browser, jalan]
+5           [malas, tidur, jaringan, ngajak, kelahi]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#==== Stemming : mengurangi dimensi fitur kata/term</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">................ Proses Stemming ................ &#39;</span><span class="p">)</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">stemming</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">listokalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">==========&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>................ Proses Stemming ................ 
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~\AppData\Local\Temp\ipykernel_6696\768720609.py</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#==== Stemming : mengurangi dimensi fitur kata/term</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">................ Proses Stemming ................ &#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">stemming</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Stemmed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">listokalimat</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\series.py</span> in <span class="ni">apply</span><span class="nt">(self, func, convert_dtype, args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4769</span>         <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+<span class="g g-Whitespace">   </span><span class="mi">4770</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4771</span><span class="sd">         return SeriesApply(self, func, convert_dtype, args, kwargs).apply()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4772</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">4773</span><span class="sd">     def _reduce(</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1121</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="sd">         # self.f is Callable</span>
+<span class="ne">-&gt; </span><span class="mi">1123</span><span class="sd">         return self.apply_standard()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1124</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="sd">     def agg(self):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\apply.py</span> in <span class="ni">apply_standard</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1173</span><span class="sd">                 values = obj.astype(object)._values</span>
+<span class="ne">-&gt; </span><span class="mi">1174</span><span class="sd">                 mapped = lib.map_infer(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span><span class="sd">                     values,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span><span class="sd">                     f,</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\_libs\lib.pyx</span> in <span class="ni">pandas._libs.lib.map_infer</span><span class="nt">()</span>
+
+<span class="nn">~\AppData\Local\Temp\ipykernel_6696\2276013189.py</span> in <span class="ni">stemming</span><span class="nt">(kalimat)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">             term_dict[temp[x]] = temp[x]</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">163</span><span class="sd">             term_dict[temp[x]] = stemmer.stem(temp[x])</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span><span class="sd">     kalimat=[term_dict[term] for term in kalimat]</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span><span class="sd">     #listToStr = &#39; &#39;.join([str(i) for i in kalimat])</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\CachedStemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span><span class="sd">                 stems.append(self.cache.get(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="sd">             else:</span>
+<span class="ne">---&gt; </span><span class="mi">20</span><span class="sd">                 stem = self.delegatedStemmer.stem(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span><span class="sd">                 self.cache.set(word, stem)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span><span class="sd">                 stems.append(stem)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="sd">         for word in words:</span>
+<span class="ne">---&gt; </span><span class="mi">27</span><span class="sd">             stems.append(self.stem_word(word))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span><span class="sd">         return &#39; &#39;.join(stems)</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span><span class="sd">             return self.stem_plural_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="sd">         else:</span>
+<span class="ne">---&gt; </span><span class="mi">36</span><span class="sd">             return self.stem_singular_word(word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="sd">     def is_plural(self, word):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Stemmer.py</span> in <span class="ni">stem_singular_word</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Stem</span> <span class="n">a</span> <span class="n">singular</span> <span class="n">word</span> <span class="n">to</span> <span class="n">its</span> <span class="n">common</span> <span class="n">stem</span> <span class="n">form</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2">         context = Context(word, self.dictionary, self.visitor_provider)</span>
+<span class="ne">---&gt; </span><span class="mi">84</span><span class="s2">         context.execute()</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2">         return context.result</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">execute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span><span class="s2">         #step 1 - 5</span>
+<span class="ne">---&gt; </span><span class="mi">37</span><span class="s2">         self.start_stemming_process()</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="s2">         #ECS loop pengembalian akhiran</span>
+<span class="ne">---&gt; </span><span class="mi">85</span><span class="s2">         self.loop_pengembalian_akhiran()</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">loop_pengembalian_akhiran</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="s2">             #step 4,5</span>
+<span class="ne">--&gt; </span><span class="mi">141</span><span class="s2">             self.remove_prefixes()</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="s2">                 return</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         removalCount = len(self.removals)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="s2">     def accept(self, visitor):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span><span class="s2">         visitor.visit(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="s2">     def accept_visitors(self, visitors):</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Stemmer\Context\Visitor\AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">         for disambiguator in self.disambiguators:</span>
+<span class="ne">---&gt; </span><span class="mi">14</span><span class="s2">             result = disambiguator.disambiguate(context.current_word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2">             if context.dictionary.contains(result):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2">                 break</span>
+
+<span class="nn">~\AppData\Local\Programs\Python\Python311\Lib\site-packages\Sastrawi\Morphology\Disambiguator\DisambiguatorPrefixRule28.py</span> in <span class="ni">disambiguate</span><span class="nt">(self, word)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span><span class="s2">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> 
+<span class="ne">---&gt; </span><span class="mi">21</span>     <span class="k">def</span> <span class="nf">disambiguate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="s2">&quot;&quot;&quot;Disambiguate Prefix Rule 28b</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="s2">         Rule 28b : pen</span><span class="si">{V}</span><span class="s2"> -&gt; pe-t</span><span class="si">{V}</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#====================== lakukan TF-IDF</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">................ Hitung TF-IDF ................ &#39;</span><span class="p">)</span>
+<span class="n">tfidf_vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">vect_docs</span> <span class="o">=</span> <span class="n">tfidf_vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">])</span>
+<span class="c1">#print(vect_docs)</span>
+<span class="n">features_names</span> <span class="o">=</span> <span class="n">tfidf_vect</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="n">datane</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">means</span><span class="o">=</span><span class="n">vect_docs</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">term</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">features_names</span><span class="p">):</span>
+    <span class="n">datane</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">means</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">col</span><span class="p">]</span> <span class="p">))</span>
+
+<span class="n">ranking</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datane</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;term&#39;</span><span class="p">,</span><span class="s1">&#39;rata2bobot&#39;</span><span class="p">])</span>
+<span class="n">ranking</span> <span class="o">=</span> <span class="n">ranking</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;rata2bobot&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ranking</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">dense</span> <span class="o">=</span> <span class="n">vect_docs</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="n">alist</span> <span class="o">=</span> <span class="n">dense</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">================&#39;</span><span class="p">)</span>
+<span class="n">newData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">features_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>................ Hitung TF-IDF ................ 
+          term  rata2bobot
+535   jaringan    0.105116
+501   internet    0.053987
+117     banget    0.046293
+545      jelek    0.042897
+1447        ya    0.033473
+702     lambat    0.032434
+490   indihome    0.029758
+
+================
+      aamiin  aba  abad  abai  abi  absen  adi  adik     admin  administrator  \
+0        0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+1        0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+2        0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+3        0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+4        0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+...      ...  ...   ...   ...  ...    ...  ...   ...       ...            ...   
+1369     0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+1370     0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.000000            0.0   
+1371     0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.487452            0.0   
+1372     0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.244172            0.0   
+1373     0.0  0.0   0.0   0.0  0.0    0.0  0.0   0.0  0.421101            0.0   
+
+      ...   xx        ya  yakin  yaudah   yo  youtube  yuk  zabo  zaman  zoom  
+0     ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+1     ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+2     ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+3     ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+4     ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+...   ...  ...       ...    ...     ...  ...      ...  ...   ...    ...   ...  
+1369  ...  0.0  0.266236    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+1370  ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+1371  ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+1372  ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+1373  ...  0.0  0.000000    0.0     0.0  0.0      0.0  0.0   0.0    0.0   0.0  
+
+[1374 rows x 1456 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">newData</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:]</span>
+<span class="n">y</span><span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s2">&quot;Label&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">================ Model ================ &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">================ Pembagian data Training dan Testing ================ &#39;</span><span class="p">)</span>
+<span class="c1">#============================ K-fold Start</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">K - Fold Cross Validation&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fold-berjumlah:&quot;</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+<span class="n">kfold</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">temp_akurasi</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">it</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">TN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">FN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">train_index</span> <span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">X_train</span> <span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">,:],</span><span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">,:]</span>
+    <span class="n">y_train</span> <span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_index</span><span class="p">]</span> <span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">================ Fold ke -&#39;</span><span class="p">,</span><span class="n">it</span><span class="p">)</span>
+    <span class="c1">#print(&#39;Data Train\n&#39;,X_train)</span>
+    <span class="c1">#print(&#39;Data Test\n&#39;,X_test)</span>
+    <span class="n">sm</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x_oversample</span><span class="p">,</span> <span class="n">y_oversample</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="c1">#setelah resampling dengan SMOTE</span>
+    <span class="n">jumlah_awal</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cekLabel_awal</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+    <span class="n">jumlah_sm</span> <span class="o">=</span> <span class="n">y_oversample</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cekLabel_sm</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">y_oversample</span><span class="p">)</span>
+    <span class="n">jumlah_tes</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jumlah Data latih sebelum SMOTE =&#39;</span><span class="p">,</span> <span class="n">jumlah_awal</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sarkasme =&#39;</span><span class="p">,</span> <span class="n">cekLabel_awal</span><span class="p">[</span><span class="s1">&#39;Sarkasme&#39;</span><span class="p">],</span><span class="s1">&#39;BukanSarkas =&#39;</span><span class="p">,</span><span class="n">cekLabel_awal</span><span class="p">[</span><span class="s1">&#39;BukanSarkas&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jumlah Data latih setelah SMOTE =&#39;</span><span class="p">,</span> <span class="n">jumlah_sm</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sarkasme =&#39;</span><span class="p">,</span> <span class="n">cekLabel_sm</span><span class="p">[</span><span class="s1">&#39;Sarkasme&#39;</span><span class="p">],</span><span class="s1">&#39;BukanSarkas =&#39;</span><span class="p">,</span><span class="n">cekLabel_sm</span><span class="p">[</span><span class="s1">&#39;BukanSarkas&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jumlah Data Uji =&#39;</span><span class="p">,</span> <span class="n">jumlah_tes</span><span class="p">)</span>
+    <span class="n">baseLearn_svm</span><span class="o">=</span><span class="n">SVC</span><span class="p">(</span><span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+    <span class="n">model_adaboost</span> <span class="o">=</span><span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">base_estimator</span><span class="o">=</span><span class="n">baseLearn_svm</span><span class="p">,</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">model_adaboost</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_oversample</span><span class="p">,</span><span class="n">y_oversample</span><span class="p">)</span>
+    <span class="n">Prediksi</span> <span class="o">=</span> <span class="n">model_adaboost</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    
+    <span class="n">ceklah</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tweet_Split&#39;</span><span class="p">,</span><span class="s1">&#39;Label_Split&#39;</span><span class="p">,</span><span class="s1">&#39;Label_Prediksi&#39;</span><span class="p">])</span>
+    <span class="n">ceklah</span><span class="p">[</span><span class="s1">&#39;newTweet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Tweet&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="n">ceklah</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataTweet</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">]</span>
+    <span class="n">ceklah</span><span class="p">[</span><span class="s1">&#39;LabelPrediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Prediksi</span>
+    
+    <span class="n">jumlahtes</span> <span class="o">=</span> <span class="n">ceklah</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">positif</span><span class="o">=</span><span class="s2">&quot;Sarkasme&quot;</span>
+    <span class="n">negatif</span><span class="o">=</span><span class="s2">&quot;BukanSarkas&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">jumlahtes</span><span class="p">):</span>
+        <span class="n">cek</span><span class="o">=</span><span class="n">ceklah</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cek</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="n">positif</span> <span class="ow">and</span> <span class="n">cek</span><span class="o">.</span><span class="n">LabelPrediksi</span><span class="o">==</span><span class="n">positif</span><span class="p">):</span>
+            <span class="n">TP</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">cek</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="n">positif</span> <span class="ow">and</span> <span class="n">cek</span><span class="o">.</span><span class="n">LabelPrediksi</span><span class="o">==</span><span class="n">negatif</span><span class="p">):</span>
+            <span class="n">FP</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">cek</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="n">negatif</span> <span class="ow">and</span> <span class="n">cek</span><span class="o">.</span><span class="n">LabelPrediksi</span><span class="o">==</span><span class="n">negatif</span><span class="p">):</span>
+            <span class="n">TN</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">cek</span><span class="o">.</span><span class="n">Label</span><span class="o">==</span><span class="n">negatif</span> <span class="ow">and</span> <span class="n">cek</span><span class="o">.</span><span class="n">LabelPrediksi</span><span class="o">==</span><span class="n">positif</span><span class="p">):</span>
+            <span class="n">FN</span><span class="o">+=</span><span class="mi">1</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(TP) TruePositif :&quot;</span><span class="p">,</span><span class="n">TP</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(FP) FalsePositif :&quot;</span><span class="p">,</span><span class="n">FP</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(TN) TrueNegatif :&quot;</span><span class="p">,</span><span class="n">TN</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(FN) FalsePNegatif :&quot;</span><span class="p">,</span><span class="n">FN</span><span class="p">)</span>
+    <span class="n">akurasi</span><span class="o">=</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">TN</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">TP</span><span class="o">+</span><span class="n">FP</span><span class="o">+</span><span class="n">TN</span><span class="o">+</span><span class="n">FN</span><span class="p">)</span>
+    <span class="n">hasil_akurasi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">akurasi</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+    <span class="n">temp_akurasi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hasil_akurasi</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Akurasi Fold ke -&#39;</span><span class="p">,</span><span class="n">it</span><span class="p">,</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">hasil_akurasi</span><span class="p">)</span>
+    <span class="n">kfold</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">jumlahtes</span><span class="p">,</span><span class="n">TP</span><span class="p">,</span><span class="n">FP</span><span class="p">,</span><span class="n">TN</span><span class="p">,</span><span class="n">FN</span><span class="p">,</span><span class="n">hasil_akurasi</span><span class="p">])</span>
+    <span class="n">it</span><span class="o">=</span><span class="n">it</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">TP</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">FP</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">TN</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">FN</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">rata2</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_akurasi</span><span class="p">)):</span>
+    <span class="n">rata2</span><span class="o">=</span><span class="n">rata2</span><span class="o">+</span><span class="n">temp_akurasi</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">rata2</span><span class="o">/</span><span class="n">k</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kfold</span><span class="p">)</span>
+
+<span class="c1">#============================ K-fold End</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Deteksi_Sarkasme"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../BasicPython/0_basicpython.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Install Python</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ahmad Yazid Munif
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
